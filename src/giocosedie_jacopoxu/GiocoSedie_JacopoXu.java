@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author B045_09
+ * @author Jacopo Xu
  */
 public class GiocoSedie_JacopoXu {
     private final static int NUMSEDIE = 15;
@@ -27,14 +27,20 @@ public class GiocoSedie_JacopoXu {
 	//System.out.println("Sto facendo partire il Display.");
         logger.info("Sto facendo partire il Display.\n");
 	display.start();
-
+         
+        Scrittore scrittore = new Scrittore("Risultato.txt");
+        Thread threadScrittore = new Thread(scrittore);
+        threadScrittore.start();
+            
 	Partecipante array[] = new Partecipante[NUMSEDIE+1];
 	for (int i = 0; i < NUMSEDIE + 1; i++) {
-		array[i] = new Partecipante(sedie);
-                //System.out.println("Sto facendo partire il thread n." + array[i].getId());
-                logger.info("Sto facendo partire il thread id: " + array[i].getId()+" name: "+array[i].getName()+"\n");
-                array[i].start();
-                }
+            array[i] = new Partecipante(sedie);
+            //System.out.println("Sto facendo partire il thread n." + array[i].getId());
+            logger.info("Sto facendo partire il thread id: " + array[i].getId()+" name: "+array[i].getName()+"\n");
+            array[i].start();
+            scrittore.scrivi(text);
+        }
+        
     }
     
 }

@@ -6,7 +6,7 @@ package giocosedie_jacopoxu;
 
 /**
  *
- * @author B045_09
+ * @author JacopoXu
  */
 public class Posto
 

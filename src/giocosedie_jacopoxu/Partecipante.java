@@ -6,43 +6,34 @@ package giocosedie_jacopoxu;
 
 /**
  *
- * @author B045_09
+ * @author Jacopo Xu
  */
-public class Display extends Thread
+public class Partecipante extends Thread
 
 {
-	private Posto sedie[];
-	private boolean endgame;
+	Posto sedie[];
 
-	public Display(Posto sedie[]) {
+	public Partecipante(Posto sedie[]) {
 
+		this.sedie = sedie;
 
-		this.sedie = new Posto[sedie.length];
-
-		for (int s = 0; s < sedie.length; s++)
-			this.sedie[s] = sedie[s];
 	}
 
 	public void run() {
 
 		try {
-			while (!endgame) {
-				int count = 0;
+			sleep((int) (Math.random() * 1000));
 
-				sleep((int) (Math.random() * 250));
-
-				for (int i = 0; i < sedie.length; i++) {
-				
-					if (sedie[i].libero())
-						System.out.print("0");
-					else {
-						count++;
-						System.out.print("*");
-					}
+			for (int i = 0; i < sedie.length; i++) {
+				if (sedie[i].occupa()) {
+					System.out.println("Sono il Thread " + this.getName()
+							+ ". Sono riuscito a sedermi sul posto " + i);
+					return;
 				}
-				System.out.println();
-				endgame = (count == sedie.length);
 			}
+			System.out.println("Sono il Thread " + this.getName()
+					+ ". Ho perso :((((");
+
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
