@@ -17,7 +17,9 @@ public class GiocoSedie_JacopoXu {
     /**
      * @param args the command line arguments
      */
+    @SuppressWarnings("deprecation") //Utilizzato per togliere il warning dal metodo "getId()"
     public static void main(String[] args) {
+       Scrittore scrittore = new Scrittore("Risultato.txt");
        Posto sedie[] = new Posto[NUMSEDIE];
 
         for (int k = 0; k < sedie.length; k++)
@@ -27,20 +29,15 @@ public class GiocoSedie_JacopoXu {
 	//System.out.println("Sto facendo partire il Display.");
         logger.info("Sto facendo partire il Display.\n");
 	display.start();
-         
-        Scrittore scrittore = new Scrittore("Risultato.txt");
-        Thread threadScrittore = new Thread(scrittore);
-        threadScrittore.start();
             
 	Partecipante array[] = new Partecipante[NUMSEDIE+1];
-	for (int i = 0; i < NUMSEDIE + 1; i++) {
-            array[i] = new Partecipante(sedie);
+	for (int i = 1; i < NUMSEDIE + 1; i++) {
+            array[i] = new Partecipante(sedie, scrittore);
             //System.out.println("Sto facendo partire il thread n." + array[i].getId());
             logger.info("Sto facendo partire il thread id: " + array[i].getId()+" name: "+array[i].getName()+"\n");
             array[i].start();
-            scrittore.scrivi(text);
         }
         
     }
-    
+
 }

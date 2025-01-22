@@ -8,14 +8,11 @@ package giocosedie_jacopoxu;
  *
  * @author JacopoXu
  */
-public class Posto
+public class Posto {
 
-{
 	private boolean occupato;
 
-	public Posto()
-
-	{
+	public Posto() {
 		occupato = false;
 	}
 
@@ -29,4 +26,5 @@ public class Posto
 		else
 			return occupato = true;
 	}
+	
 }

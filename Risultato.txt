@@ -1,0 +1,18 @@
+Gioco del 2025-01-22 22:03:56
+
+Thread 48 ha preso il posto 1
+Thread 50 ha preso il posto 2
+Thread 42 ha preso il posto 3
+Thread 30 ha preso il posto 4
+Thread 44 ha preso il posto 5
+Thread 32 ha preso il posto 6
+Thread 34 ha preso il posto 7
+Thread 36 ha preso il posto 8
+Thread 40 ha preso il posto 9
+Thread 38 ha preso il posto 10
+Thread 46 ha preso il posto 11
+Thread 23 ha preso il posto 12
+Thread 28 ha preso il posto 13
+Thread 26 ha preso il posto 14
+Thread 24 ha preso il posto 15
+
