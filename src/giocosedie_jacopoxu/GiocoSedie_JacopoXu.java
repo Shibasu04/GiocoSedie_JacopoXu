@@ -5,20 +5,23 @@
 package giocosedie_jacopoxu;
 
 import java.util.logging.Logger;
-
+import java.util.Scanner;
 /**
  *
  * @author Jacopo Xu
  */
 public class GiocoSedie_JacopoXu {
-    private final static int NUMSEDIE = 15;
     private static Logger logger = Logger.getLogger("GiocoSedie.TestGiocoSedie");
     
     /**
      * @param args the command line arguments
      */
-    @SuppressWarnings("deprecation") //Utilizzato per togliere il warning dal metodo "getId()"
+    @SuppressWarnings({ "deprecation", "resource" }) //Utilizzato per togliere il warning dal metodo "getId()" e scanner
     public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+       System.out.print("Inserisci il numero di partecipanti: ");
+       int nPartecipanti = scanner.nextInt();
+       int NUMSEDIE = nPartecipanti - 1;
        Scrittore scrittore = new Scrittore("Risultato.txt");
        Posto sedie[] = new Posto[NUMSEDIE];
 
@@ -30,7 +33,7 @@ public class GiocoSedie_JacopoXu {
         logger.info("Sto facendo partire il Display.\n");
 	display.start();
             
-	Partecipante array[] = new Partecipante[NUMSEDIE+1];
+	Partecipante array[] = new Partecipante[nPartecipanti];
 	for (int i = 1; i < NUMSEDIE + 1; i++) {
             array[i] = new Partecipante(sedie, scrittore);
             //System.out.println("Sto facendo partire il thread n." + array[i].getId());
