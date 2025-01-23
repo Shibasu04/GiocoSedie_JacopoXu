@@ -1,9 +1,7 @@
-Gioco del 2025-01-22 22:30:54
+Gioco del 2025-01-22 22:46:36
 
-Thread 32 ha preso il posto 1
-Thread 28 ha preso il posto 2
-Thread 30 ha preso il posto 3
-Thread 23 ha preso il posto 4
-Thread 26 ha preso il posto 5
-Thread 24 ha preso il posto 6
+Thread 26 ha preso il posto 1
+Thread 23 ha preso il posto 2
+Thread 25 ha preso il posto 3
+Thread 24 ha preso il posto 4
 

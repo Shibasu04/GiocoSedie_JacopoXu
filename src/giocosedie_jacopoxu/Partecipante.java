@@ -20,10 +20,7 @@ public class Partecipante extends Thread {
 
 	@SuppressWarnings("deprecation") //Utilizzato per togliere il warning dal metodo "getId()"
 
-	public void run() {
-		
-		Thread threadScrittore = new Thread(scrittore);
-		threadScrittore.start();
+	public void run() {		
 		try {
 			sleep((int) (Math.random() * 1000));
 
@@ -35,7 +32,7 @@ public class Partecipante extends Thread {
 				}
 			}
 			System.out.println("Sono il Thread " + this.getName()+ ". Ho perso :((((");
-			
+			scrittore.scrivi("Thread " + this.getId() + " non è riuscito a trovare una sedia.");
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
