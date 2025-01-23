@@ -14,5 +14,5 @@ Applicazione Java per simulare il gioco delle sedie, in cui i giocatori sono pi√
 4. Il risultato del gioco verr√† scritto sotto la stessa cartella del progetto, con nome "Risultato.txt"
 
 ## Autori
-Jacopo Xu [Shibasu04] (https://github.com/Shibasu04)
-Monica Ciuchetti [mciuchetti] (https://github.com/mciuchetti)
+Jacopo Xu [Shibasu04](https://github.com/Shibasu04)
+Monica Ciuchetti [mciuchetti](https://github.com/mciuchetti)
